@@ -48,13 +48,16 @@ typedef struct coordinate coordinate;
 coordinate head, bend[500],food,body[30];
 int main(){
 int abc;
-printf("WHICH GAME DO YOU WANA PLAY?\nTITAK-1 SNAKE-2 : ");
+printf("WHICH GAME DO YOU WANA PLAY?\nTITAK-1 SNAKE-2 GUESS THE NUMBER 3 : ");
 scanf("%d",&abc);
 if(abc==1){
 maintiktak();
 }
 else if(abc==2){
 mainsnake();
+}
+else if(abc==3){
+    mainguess();
 }
 else{
 printf("WILL ADD MORE GAMES SOON");
@@ -710,4 +713,60 @@ system("color 01");
     printf("  %c  |  %c  |  %c \n", square[7], square[8], square[9]);
 
     printf("     |     |     \n\n");
+}
+void mainguess()
+{
+    int random_genNo=0,count=0,num;
+    int stime;
+    long ltime;
+    int abcd=0;
+int difficulty;
+    //initialise srand with current time, to get random number on every run
+    ltime = time(NULL);
+    stime = (unsigned) ltime/2;
+    srand(stime);
+
+    //generate random number
+    random_genNo=rand()%1000;
+    printf("CHOOSE YOUR LEVEL EASY-1 MEDIUM-2 HARD-3 ");
+scanf("%d",&difficulty);
+if(difficulty==1){
+    abcd==15;
+}
+else if(difficulty==2){
+    abcd==10;
+}
+else{
+    abcd==7;
+}
+    //run infinite loop
+    while(1)
+    {
+        //increase counter
+count+=1;
+
+        //read number from user
+        printf("\n\nGuess a number from (0 to 1000): ");
+
+scanf("%d",&num);
+        //compare entered number with generated number
+
+        if(random_genNo==num){
+            printf("Congratulations, you have guessed a correct number.");
+            break;
+        }
+        else if(random_genNo<num){
+            printf("Generated number is less than entered number, try your luck again...");
+        }
+        else if(random_genNo>num){
+            printf("Generated number is greater than entered number, try your luck again...");
+        }
+
+        if(count==15){
+            printf("\n\n### Maximum limit of atttempt finished, BAD LUCK !!!\n");
+           break;
+        }
+    }
+
+
 }
