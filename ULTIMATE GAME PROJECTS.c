@@ -48,7 +48,7 @@ typedef struct coordinate coordinate;
 coordinate head, bend[500],food,body[30];
 int main(){
 int abc;
-printf("WHICH GAME DO YOU WANA PLAY?\nTITAK-1 SNAKE-2 GUESS THE NUMBER 3 : ");
+printf("WHICH GAME DO YOU WANA PLAY?\nTITAK-1 SNAKE-2 GUESS THE NUMBER-3 STONE-PAPER-4 : ");
 scanf("%d",&abc);
 if(abc==1){
 maintiktak();
@@ -59,6 +59,10 @@ mainsnake();
 else if(abc==3){
     mainguess();
 }
+else if(abc==4){
+    spsmain();
+}
+
 else{
 printf("WILL ADD MORE GAMES SOON");
 }
@@ -770,3 +774,93 @@ scanf("%d",&num);
 
 
 }
+int spsmain(){printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\tHi test your luck in stone paper scissors by playing against computer\n\n\t\t\t\t\t\t");
+    system("color 01");
+Sleep(300);
+system("color 02");
+Sleep(300);
+system("color 03");
+Sleep(300);
+system("color 04");
+Sleep(300);
+system("color 05");
+Sleep(300);
+system("color 01");
+srand(time(NULL));
+int r = rand();
+int choose,sum=0,i;
+system("pause");
+system("cls");
+for(i=0;i<5;i++){
+printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\tCHOOSE 1-STONE 2-PAPER 3-SCISSORS-- ");
+scanf("%d",&choose);
+printf("\t\t\t\t\t\t");
+if(choose==1&& r%3==0){
+    printf("        tie\n");sum++;
+}
+else if(choose==1&& r%3==1){
+    printf("lost opponent choose paper\n");sum--;
+}
+else if(choose==1&& r%3==2){
+    printf("WON OPPONENT CHOOSED SCISSORS\n");sum+=2;
+}
+else if(choose==2&& r%3==0){
+    printf("WON OPPONENT CHOOSED STONE\n");sum+=2;
+}
+else if(choose==2&& r%3==1){
+    printf("       tie\n");sum++;
+}
+else if(choose==2&& r%3==2){
+    printf("lost opponent choose scissors\n");sum--;
+}
+else if(choose==3&& r%3==0){
+    printf("lost opponent choose scissors\n");sum--;
+}
+else if(choose==3&& r%3==1){
+    printf("WON OPPONENT CHOOSED paper\n");sum+=2;
+}
+else if(choose==3&& r%3==2){
+    printf("       tie\n");sum++;
+}
+else{
+    printf("ENTER CORRECT NUMBER\n");sum-=2;
+}
+    system("color 01");
+Sleep(300);
+system("color 02");
+Sleep(300);
+system("color 03");
+Sleep(300);
+system("color 04");
+Sleep(300);
+system("color 05");
+Sleep(300);
+system("color 01");
+system("pause");
+system("cls");}
+printf("\n\n\n\n\n\n\n\n\n\n\t\t\t\t\t");
+printf("your score is %d\n",sum);
+printf("\n\t\t\t\t\t");
+if(sum>6){
+    printf("you have very good luck");
+}
+else if(sum>2){
+    printf("better luck next time");
+}
+else{
+    printf("bad luck");
+}
+system("color 01");
+Sleep(300);
+system("color 02");
+Sleep(300);
+system("color 03");
+Sleep(300);
+system("color 04");
+Sleep(300);
+system("color 05");
+Sleep(300);
+return 0;
+}
+
+
